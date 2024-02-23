@@ -3,6 +3,11 @@
 # dependencies
 /node_modules
 
+# build artifacts
+/build
+/dist
+/.parcel-cache
+
 # misc
 .DS_Store
 *.pem

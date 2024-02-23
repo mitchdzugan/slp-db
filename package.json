@@ -5,10 +5,30 @@
   "type": "module",
   "author": "Mitch Dzugan <mitchdzugan@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "packager": "node node_modules/nwjs-packager/bin/index.js",
+    "build": "yarn run packager .",
+    "start": "nw ."
+  },
   "dependencies": {
     "mutative": "^1.0.3",
     "preact": "^10.19.6",
     "realm": "^12.3.1",
     "xdg-app-paths": "^8.3.0"
+  },
+  "devDependencies": {
+    "nwjs-packager": "^1.5.1"
+  },
+  "nwjs-packager": {
+    "nwVersion": "latest",
+    "appFriendlyName": "slp-db",
+    "appMacIcon": "bin/icon.icns",
+    "appWinIcon": "bin/icon.ico",
+    "files": ["index.html"],
+    "builds": {
+      "linux": {"tar.gz": true},
+      "osx": {"zip": true},
+      "win": {"zip": true}
+    }
   }
 }
