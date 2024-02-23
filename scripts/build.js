@@ -9,14 +9,14 @@ const buildCmd = (i, o) => (
 const toCompile = [
 	'index.js',
 	'lib/index.js',
+	'app.js',
+	'lib/app.js',
 ];
 const toCopy = [
 	'package.json',
 	'index.html', 
 	'scripts/package.js',
-	'node_modules/realm/index.node.js',
-	'node_modules/realm/generated/ts/realm.node',
-	'node_modules/realm/dist/bundle.node.js',
+	'node_modules/preact/dist/preact.min.js',
 	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js'
 ];
 
