@@ -40,17 +40,5 @@
         "zip": true
       }
     }
-  },
-  "targets": {
-    "main": {
-      "context": "node",
-      "isLibrary": true,
-      "sourceMap": false,
-      "outputFormat": "commonjs",
-      "includeNodeModules": {
-        "typescript": false,
-        "vscode": false
-      }
-    }
   }
 }
