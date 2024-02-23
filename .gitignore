@@ -4,8 +4,10 @@
 /node_modules
 
 # build artifacts
-/build
 /dist
+/build
+/nwjs-build
+/cache
 /.parcel-cache
 
 # misc

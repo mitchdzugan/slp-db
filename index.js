@@ -1,4 +1,7 @@
-// import("./dist/index.js").then(({ exec }) => exec(process.argv));
-nw.Window.open('index.html', {}, function(win) {
-    console.log(win);
-  });
+console.log("ayy")
+import("./lib/index.js").then(
+    ({ exec }) => exec(process.argv)
+).catch((e) => {
+  console.error("ERROR")
+  console.error(e);
+});

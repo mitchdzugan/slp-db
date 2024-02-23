@@ -1,13 +1,14 @@
 {
   "name": "slp-db",
   "version": "0.0.1",
-  "main": "index.html",
-  "type": "module",
+  "main": "index.js",
   "author": "Mitch Dzugan <mitchdzugan@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "packager": "node node_modules/nwjs-packager/bin/index.js",
-    "build": "yarn run packager .",
+    "build__": "yarn run packager .",
+    "build": "node scripts/build.js",
     "start": "nw ."
   },
   "dependencies": {
@@ -17,18 +18,44 @@
     "xdg-app-paths": "^8.3.0"
   },
   "devDependencies": {
-    "nwjs-packager": "^1.5.1"
+    "nw-builder": "^4.6.3",
+    "nwjs-packager": "^1.5.1",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.0",
+    "process": "^0.11.10",
+    "url": "^0.11.0",
+    "util": "^0.12.3"
   },
   "nwjs-packager": {
     "nwVersion": "latest",
     "appFriendlyName": "slp-db",
     "appMacIcon": "bin/icon.icns",
     "appWinIcon": "bin/icon.ico",
-    "files": ["index.html"],
+    "files": [
+      "index.html, index.js, lib/**.*, node_modules/**/*"
+    ],
     "builds": {
-      "linux": {"tar.gz": true},
-      "osx": {"zip": true},
-      "win": {"zip": true}
+      "linux": {
+        "tar.gz": true
+      },
+      "osx": {
+        "zip": true
+      },
+      "win": {
+        "zip": true
+      }
+    }
+  },
+  "targets": {
+    "main": {
+      "context": "node",
+      "isLibrary": true,
+      "sourceMap": false,
+      "outputFormat": "commonjs",
+      "includeNodeModules": {
+        "typescript": false,
+        "vscode": false
+      }
     }
   }
 }
