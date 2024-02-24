@@ -7,17 +7,20 @@ const buildCmd = (i, o) => (
 )
 
 const toCompile = [
-	'index.js',
-	'lib/index.js',
 	'app.js',
+	'index.js',
 	'lib/app.js',
+	'lib/index.js',
+	'lib/ui.js',
 ];
 const toCopy = [
 	'package.json',
-	'index.html', 
+	'index.html',
 	'scripts/package.js',
 	'node_modules/preact/dist/preact.min.js',
-	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js'
+	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js',
+	'node_modules/node-persist/src/node-persist.js',
+	'node_modules/node-persist/src/local-storage.js'
 ];
 
 const root = '/home/mitch/Projects/slp-db/';
