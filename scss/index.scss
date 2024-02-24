@@ -1,0 +1,15 @@
+@import './_variables';
+@import 'node_modules/bulma/bulma';
+@import 'node_modules/bulmaswatch/superhero/_overrides';
+
+.mobile-hide {
+    @include mobile {
+        display: none;
+    }
+}
+
+.mobile-only {
+    @include tablet {
+        display: none;
+    }
+}

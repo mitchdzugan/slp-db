@@ -9,6 +9,7 @@ const buildCmd = (i, o) => (
 const toCompile = [
 	'app.js',
 	'index.js',
+	'dist/index.css',
 	'lib/app.js',
 	'lib/index.js',
 	'lib/ui.js',
@@ -17,7 +18,8 @@ const toCopy = [
 	'package.json',
 	'index.html',
 	'scripts/package.js',
-	'node_modules/preact/dist/preact.min.js',
+	'node_modules/preact/dist/preact.min.js', 
+	'node_modules/preact/hooks/dist/hooks.js',
 	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js',
 	'node_modules/node-persist/src/node-persist.js',
 	'node_modules/node-persist/src/local-storage.js'
