@@ -2620,6 +2620,11 @@ nw-builder@^4.6.3:
     yargs "^17.7.2"
     yauzl-promise "^4.0.0"
 
+nw-programmatic-folder-select@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/nw-programmatic-folder-select/-/nw-programmatic-folder-select-1.0.5.tgz#041b12a1743e6bc67ad1a7f18af5151b1ba0d1b8"
+  integrity sha512-6JOpgneF4GFlsR8mme+jderMyV0lnIjpxUEgQ31YUtsSx3fYd/hw3XinklJTCw4t9DvXbFz7O2jAYx3rUnsabA==
+
 nwjs-packager@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/nwjs-packager/-/nwjs-packager-1.5.1.tgz#4c9df7176e34dafd6855276dd7c6f3e5c1be67a7"

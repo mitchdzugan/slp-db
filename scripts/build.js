@@ -38,10 +38,12 @@ const toCopy = [
 	'node_modules/express/lib/router/layer.js',
 	'node_modules/express/lib/router/route.js',
 	'node_modules/preact/dist/preact.min.js',
+	'node_modules/preact/compat/dist/compat.mjs',
 	'node_modules/preact/hooks/dist/hooks.js',
 	'node_modules/mutative/dist/mutative.esm.mjs',
 	'node_modules/node-persist/src/node-persist.js',
 	'node_modules/node-persist/src/local-storage.js',
+	'node_modules/nw-programmatic-folder-select/index.js',
 	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js',
 ];
 
