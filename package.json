@@ -12,6 +12,7 @@
     "start": "nw ."
   },
   "dependencies": {
+    "better-sqlite3": "^9.4.3",
     "body-parser": "^1.20.2",
     "bulma": "^0.9.4",
     "bulmaswatch": "^0.8.1",
@@ -26,7 +27,9 @@
     "@parcel/transformer-sass": "2.11.0",
     "node-sass": "^9.0.0",
     "nw-builder": "^4.6.3",
-    "nwjs-packager": "^1.5.1"
+    "nwdc": "^1.0.1",
+    "nwjs-packager": "^1.5.1",
+    "rimraf": "^5.0.5"
   },
   "nwjs-packager": {
     "nwVersion": "latest",
@@ -47,5 +50,6 @@
         "zip": true
       }
     }
-  }
+  },
+  "chromium-args": "--enable-logging=stderr --enable-chrome-browser-cloud-management`"
 }

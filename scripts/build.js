@@ -1,6 +1,9 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { exec } from 'node:child_process';
+import * as url from 'url'; 
+import { rimraf } from 'rimraf'
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const buildCmd = (i, o) => (
 	`esbuild ${i} --bundle --outfile=${o} --format=cjs --platform=node`
@@ -19,6 +22,8 @@ const toCopy = [
 	'package.json',
 	'index.html',
 	'scripts/package.js',
+	'node_modules/better-sqlite3/lib/index.js',
+	'node_modules/better-sqlite3/build/Release/better_sqlite3.node',
 	'node_modules/body-parser/index.js',
 	'node_modules/body-parser/lib/read.js',
 	'node_modules/body-parser/lib/types/json.js',
@@ -47,12 +52,20 @@ const toCopy = [
 	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js',
 ];
 
-const root = '/home/mitch/Projects/slp-db/';
+const root = path.join(__dirname, '..');
+const buildDir = path.join(root, 'nwjs-build');
+
+await rimraf(buildDir);
+await fs.mkdir(buildDir, { recursive: true });
 
 for (const relPath of toCopy) {
 	const inPath = path.join(root, relPath);
 	const content = await fs.readFile(inPath, 'utf8');
-	const outPath = path.join(root, "nwjs-build", relPath);
+	let outPath = path.join(buildDir, relPath);
+	if (outPath.endsWith('better_sqlite3.node')) {
+		outPath = outPath.replace('node_modules\\better-sqlite3\\', '');
+		outPath = outPath.replace('node_modules/better-sqlite3/', '');
+	}
 	const outDir = path.dirname(outPath);
 	await fs.mkdir(outDir, { recursive: true });
 	await fs.writeFile(outPath, content);
@@ -60,7 +73,7 @@ for (const relPath of toCopy) {
 
 for (const relPath of toCompile) {
 	const inPath = path.join(root, relPath);
-	const outPath = path.join(root, "nwjs-build", relPath);
+	const outPath = path.join(buildDir, relPath);
 	const outDir = path.dirname(outPath);
 	await fs.mkdir(outDir, { recursive: true });
 	await new Promise((done) => {
