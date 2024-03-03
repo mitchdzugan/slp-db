@@ -12,22 +12,18 @@
     "start": "nw ."
   },
   "dependencies": {
-    "better-sqlite3": "^9.4.3",
     "body-parser": "^1.20.2",
     "bulma": "^0.9.4",
     "bulmaswatch": "^0.8.1",
+    "dexie": "^3.2.5",
     "express": "^4.18.2",
     "mutative": "^1.0.3",
-    "node-persist": "^4.0.1",
     "nw-programmatic-folder-select": "^1.0.5",
-    "preact": "^10.19.6",
-    "xdg-app-paths": "^8.3.0"
+    "preact": "^10.19.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.11.0",
-    "node-sass": "^9.0.0",
     "nw-builder": "^4.6.3",
-    "nwdc": "^1.0.1",
     "nwjs-packager": "^1.5.1",
     "rimraf": "^5.0.5"
   },

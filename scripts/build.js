@@ -22,8 +22,6 @@ const toCopy = [
 	'package.json',
 	'index.html',
 	'scripts/package.js',
-	'node_modules/better-sqlite3/lib/index.js',
-	'node_modules/better-sqlite3/build/Release/better_sqlite3.node',
 	'node_modules/body-parser/index.js',
 	'node_modules/body-parser/lib/read.js',
 	'node_modules/body-parser/lib/types/json.js',
@@ -46,10 +44,7 @@ const toCopy = [
 	'node_modules/preact/compat/dist/compat.mjs',
 	'node_modules/preact/hooks/dist/hooks.js',
 	'node_modules/mutative/dist/mutative.esm.mjs',
-	'node_modules/node-persist/src/node-persist.js',
-	'node_modules/node-persist/src/local-storage.js',
 	'node_modules/nw-programmatic-folder-select/index.js',
-	'node_modules/xdg-app-paths/dist/cjs/mod.cjs.js',
 ];
 
 const root = path.join(__dirname, '..');
